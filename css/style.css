@@ -4,3 +4,10 @@
     align-items: center;
     justify-content: center;
 }
+.myCarousel{
+    margin-top: -50px;
+}
+.myNavbar{
+    z-index: 999;
+    background-color: rgba(26, 17, 17, 0.72);
+}
