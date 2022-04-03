@@ -1,0 +1,156 @@
+
+:root {
+    --custom-red: rgb(138, 3, 3);
+    --primary-color: rgba(19, 108, 66, 1);
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.ui-page {
+    background: rgba(28, 30, 33, 0.7) url(https://lux-beb.com/caracciolo/wp-content/uploads/2020/07/1-26.jpg) no-repeat scroll center center;
+    image-resolution: snap;
+ /* Do not repeat the image */
+    background-size: cover;
+}
+
+.container {
+    background-color: rgba(28, 30, 33, 0.7);
+    max-width: 50%;
+    margin: auto auto 1%;
+    width: 50%;
+    padding: 6% 8% 6%;
+    min-height: 100%;
+}
+
+.title, .footer {
+    text-align: center;
+    background-color: rgba(28, 30, 33, 1);
+    color: var(--primary-color) !important;
+    padding: 1%;
+    margin-top: 0;
+    text-shadow: 0 1px 0 rgba(255, 210, 0, 0);
+
+
+}
+
+textarea {
+    text-align: center;
+}
+
+label {
+    font-family: "Lucida Console", Courier, monospace;
+    color: var(--primary-color);
+}
+
+.input {
+    min-width: 6%;
+    margin-outside: 1%;
+}
+
+.containerCard {
+    background-color: rgba(28, 30, 33, 0.7); !important;
+    margin: auto;
+}
+
+.idButton {
+    color: var(--primary-color) !important;
+    background-color: rgba(28, 30, 33, 0.7); !important;
+    text-align: center;
+    cursor: pointer;
+    border: 0;
+    font-size: 100%;
+    opacity: 1 !important;
+}
+
+.price {
+    color: var(--primary-color);
+    font-size: 22px;
+    text-shadow: 0 1px 0 rgba(255, 210, 0, 0);
+}
+
+.cardButton {
+    color: rgba(28, 30, 33, 0.7);;
+    width: 40% !important;
+    background-color: var(--primary-color) !important;
+    text-align: center;
+    cursor: pointer;
+    font-size: 18px;
+    opacity: 1 !important;
+    margin: auto !important;
+}
+
+.reset {
+    background-color: rgba(28, 30, 33, 0.7);!important;
+    color: var(--primary-color) !important;
+    width: 40% !important;
+    text-align: center;
+    cursor: pointer;
+    font-size: 18px;
+    opacity: 1 !important;
+    margin: auto !important;
+}
+
+.information {
+    color: var(--primary-color);
+    text-align: center;
+    text-shadow: 0 1px 0 rgba(255, 210, 0, 0);
+
+}
+
+/* Float four columns side by side */
+.column {
+    float: left;
+    width: 30%;
+    padding: 0 10px;
+}
+
+.columnBought {
+    width: 50%;
+    padding: 0 10px;
+    margin: auto;
+}
+
+/* Remove extra left and right margins, due to padding in columns */
+.row {
+    margin: 5% 5% 5% 5%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Style the counter cards */
+.card {
+    padding: 16px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.75) !important;
+    height: 100%;
+}
+
+.cardH1 {
+    color: var(--primary-color);
+    text-shadow: 0 1px 0 rgba(255, 210, 0, 0);
+
+}
+
+.link-footer {
+    color: var(--primary-color) !important;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.0);
+    text-align: center;
+    padding: 0.5%;
+}
+
+/* Responsive columns - one column layout (vertical) on small screens */
+@media screen and (max-width: 600px) {
+    .column {
+        width: 100%;
+        display: block;
+        margin-bottom: 20px;
+    }
+}
