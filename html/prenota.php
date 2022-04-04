@@ -14,44 +14,50 @@
 
 $conn = new mysqli('localhost', 'root', '', 'bed_and_breakfast');
 if ($conn->connect_error) {
-echo "$conn->connect_error";
-die("Connection Failed : " . $conn->connect_error);
+    echo "$conn->connect_error";
+    die("Connection Failed : " . $conn->connect_error);
 } else {
 //creo la query
-$sql = "SELECT * FROM bed_and_breakfast.camere";
+    $sql = "SELECT * FROM bed_and_breakfast.camere";
 //eseguo la query
-$result = $conn->query($sql);
-
-if ($result->num_rows > 0) {
-$numberElements = 0;
+    $result = $conn->query($sql);
+    $id_cliente = 1;
+    if ($result->num_rows > 0) {
+        $numberElements = 0;
 //creo la rappresentazione delle macchine in magazzino
-echo '<div class="container">';
-    while ($row = $result->fetch_assoc()) {
-    if ($numberElements % 3 == 0)
-    echo '<div class="row">';
-        echo '<div class="column">';
+        echo '<div class="container">';
+        while ($row = $result->fetch_assoc()) {
+            if ($numberElements % 3 == 0)
+                echo '<div class="row">';
+            echo '<div class="column">';
             echo '<div class="card">';
-                echo '<form name="buyform" method="post" action="boughtCar.php">';
-                    echo '<h1 class="cardH1">' . $row["nome_camera"] . "</h1>";
-                    echo '<img src="/img/' . $row["nome_camera"] . '.jpg" alt="' . $row["nome_camera"] . '" style="width:50%;height:300px">';
-                    echo '<p class="price" >' . $row["prezzo_giornaliero"] . " €</p>";
-                    echo '<p class="information" >numero bagni:' . $row["n_bagni"] . "</p>";
-                    echo '<p class="information" >numero posti letto:' . $row["posti_letto"] . "</p>";
-                    echo '<p class="information" >metratura:' . $row["metratura"] . "</p>";
-                    echo '<button type="submit" value="Compra Macchina" class="cardButton" name="submit2" >Compra!</button>';
-                    //            echo '<button class="cardButton" />Compra Macchina</button>';
-                    echo "</form>";
-                echo "</div>";
+            echo '<form name="buyform" method="post" action="aggiungiPrenotazione.php">';
+            echo '<h1 class="cardH1">' . $row["nome_camera"] . "</h1>";
+            echo '<img src="/img/' . $row["nome_camera"] . '.jpg" alt="' . $row["nome_camera"] . '" style="width:50%;height:300px">';
+            echo '<p class="price" >' . $row["prezzo_giornaliero"] . " €</p>";
+            echo '<p class="information" >numero bagni:' . $row["n_bagni"] . "</p>";
+            echo '<p class="information" >numero posti letto:' . $row["posti_letto"] . "</p>";
+            echo '<p class="information" >metratura:' . $row["metratura"] . "</p>";
+            echo '<select id="id_camera" name="id_camera" class="hideContent" >';
+            echo '<option value="' . $row["id_camera"] . '">' . $row["id_camera"] . "</option>";
+            echo '</select>';
+            echo '<select id="id_cliente" name="id_cliente" class="hideContent" >';
+            echo '<option value="' . $id_cliente . '">' . $id_cliente . "</option>";
+            echo '</select>';
+            echo '<button type="submit" value="Compra Macchina" class="cardButton" name="submit2" >Compra!</button>';
+            //            echo '<button class="cardButton" />Compra Macchina</button>';
+            echo "</form>";
             echo "</div>";
-        if ($numberElements % 3 == 2)
+            echo "</div>";
+            if ($numberElements % 3 == 2)
+                echo "</div>";
+            $numberElements++;
+        }
         echo "</div>";
-    $numberElements++;
-    }
-    echo "</div>";
 
-} else {
-echo "0 results";
-}
+    } else {
+        echo "0 results";
+    }
 }
 
 ?>

@@ -99,7 +99,11 @@ label {
     text-shadow: 0 1px 0 rgba(255, 210, 0, 0);
 
 }
-
+.hideContent{
+    color: transparent;
+    font-size: 0px;
+    background-color: transparent;
+}
 /* Float four columns side by side */
 .column {
     float: left;
