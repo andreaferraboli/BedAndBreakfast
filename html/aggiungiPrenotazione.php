@@ -18,11 +18,18 @@ if (isset($_POST['submit2'])) {
 VALUES ('$id_camera','$id_cliente','2022-02-10','2022-3-10')";
 
     if ($conn->query($sql) === TRUE) {
-        echo "New record created successfully";
+        echo "<script>
+                alert('prenotazione aggiunta correttamente');
+                window.location.href='../html/index.html';
+               </script>";
     } else {
-        echo "Error: " . $sql . "<br>" . $conn->error;
+        echo "<script>
+                alert('prenotazione non aggiunta correttamente');
+                window.location.href='../html/prenota.html';
+               </script>";
     }
 
     $conn->close();
 }
+header('Location: ../html/index.html');
 ?>
