@@ -31,5 +31,4 @@ VALUES ('$id_camera','$id_cliente','2022-02-10','2022-3-10')";
 
     $conn->close();
 }
-header('Location: ../html/index.html');
 ?>

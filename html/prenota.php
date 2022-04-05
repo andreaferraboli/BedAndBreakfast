@@ -56,7 +56,10 @@ if ($conn->connect_error) {
         echo "</div>";
 
     } else {
-        echo "0 results";
+        echo "<script>
+                alert('nessuna camera disponibile');
+                window.location.href='../html/index.html';
+               </script>";
     }
 }
 

@@ -2,7 +2,7 @@
 if (isset($_POST['submitLogin'])) {
 
     $emailLogin = array_key_exists('emailLogin', $_POST) ? $_POST['emailLogin'] : '';
-    $password = array_key_exists('passwordLogin', $_POST) ? $_POST['passwordLogin'] : '';
+    $passwordLogin = array_key_exists('passwordLogin', $_POST) ? $_POST['passwordLogin'] : '';
     $servername = "localhost";
     $username = "root";
     $password = "";
@@ -14,7 +14,7 @@ if (isset($_POST['submitLogin'])) {
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
     }
-    $sql = "SELECT email_cliente, password_cliente FROM clienti WHERE email_cliente='$emailLogin' and password_cliente='$password'";
+    $sql = "SELECT email_cliente, password_cliente FROM clienti WHERE email_cliente=" . '"' . $emailLogin . '"' . 'and password_cliente=' . '"' . $passwordLogin . '"';
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
