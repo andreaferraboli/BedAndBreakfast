@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
 
-    <link rel="stylesheet" href="../css/prenota.css">
+    <link rel="stylesheet" href="Downloads/OneDrive_1_6-4-2022/BedAndBreakfast/BedAndBreakfast/css/prenota.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 </head>
@@ -31,7 +31,7 @@ if ($conn->connect_error) {
                 echo '<div class="row">';
             echo '<div class="column">';
             echo '<div class="card">';
-            echo '<form name="buyform" method="post" action="aggiungiPrenotazione.php">';
+            echo '<form name="buyform" method="post" action="IdeaProjects/BedAndBreakfast/html/aggiungiPrenotazione.php">';
             echo '<h1 class="cardH1">' . $row["nome_camera"] . "</h1>";
             echo '<img src="/img/' . $row["nome_camera"] . '.jpg" alt="' . $row["nome_camera"] . '" style="width:50%;height:300px">';
             echo '<p class="price" >' . $row["prezzo_giornaliero"] . " €</p>";
@@ -56,7 +56,10 @@ if ($conn->connect_error) {
         echo "</div>";
 
     } else {
-        echo "0 results";
+        echo "<script>
+                alert('nessuna camera disponibile');
+                window.location.href='IdeaProjects/BedAndBreakfast/html/index.html';
+               </script>";
     }
 }
 
