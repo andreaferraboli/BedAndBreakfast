@@ -22,13 +22,13 @@ if (isset($_POST['submitLogin'])) {
         while ($row = $result->fetch_assoc()) {
             echo "<script>
                 alert('accesso eseguito correttamente');
-                window.location.href='../html/index.html';
+                window.location.href='Downloads/OneDrive_1_6-4-2022/BedAndBreakfast/BedAndBreakfast/html/index.html';
                </script>";
         }
     } else {
         echo "<script>
             alert('email o password errate, riprovare');
-            window.location.href='../html/login.html';
+            window.location.href='Downloads/OneDrive_1_6-4-2022/BedAndBreakfast/BedAndBreakfast/html/login.html';
             </script>";
     }
     $conn->close();

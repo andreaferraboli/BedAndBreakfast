@@ -58,7 +58,7 @@ if ($conn->connect_error) {
     } else {
         echo "<script>
                 alert('nessuna camera disponibile');
-                window.location.href='../html/index.html';
+                window.location.href='IdeaProjects/BedAndBreakfast/html/index.html';
                </script>";
     }
 }

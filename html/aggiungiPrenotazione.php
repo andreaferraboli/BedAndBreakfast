@@ -20,7 +20,7 @@ VALUES ('$id_camera','$id_cliente','2022-02-10','2022-3-10')";
     if ($conn->query($sql) === TRUE) {
         echo "<script>
                 alert('prenotazione aggiunta correttamente');
-                window.location.href='../html/index.html';
+                window.location.href='IdeaProjects/BedAndBreakfast/html/index.html';
                </script>";
     } else {
         echo "<script>
