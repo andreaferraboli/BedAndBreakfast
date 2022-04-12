@@ -41,9 +41,6 @@ if ($conn->connect_error) {
             echo '<select id="id_camera" name="id_camera" class="hideContent" >';
             echo '<option value="' . $row["id_camera"] . '">' . $row["id_camera"] . "</option>";
             echo '</select>';
-            echo '<select id="id_cliente" name="id_cliente" class="hideContent" >';
-            echo '<option value="' . $id_cliente . '">' . $id_cliente . "</option>";
-            echo '</select>';
             echo '<button type="submit" value="Compra Macchina" class="cardButton" name="submit2" >Compra!</button>';
             //            echo '<button class="cardButton" />Compra Macchina</button>';
             echo "</form>";

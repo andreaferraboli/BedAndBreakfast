@@ -14,21 +14,23 @@ if (isset($_POST['submitLogin'])) {
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
     }
-    $sql = "SELECT email_cliente, password_cliente FROM clienti WHERE email_cliente=" . '"' . $emailLogin . '"' . 'and password_cliente=' . '"' . $passwordLogin . '"';
+    $sql = "SELECT * FROM clienti WHERE email_cliente=" . '"' . $emailLogin . '"' . 'and password_cliente=' . '"' . $passwordLogin . '"';
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
         // output data of each row
         while ($row = $result->fetch_assoc()) {
+            session_start();
+            $_SESSION['user'] = $row["id_cliente"];
             echo "<script>
                 alert('accesso eseguito correttamente');
-                window.location.href='Downloads/OneDrive_1_6-4-2022/BedAndBreakfast/BedAndBreakfast/html/index.html';
+                window.location.href='../html/index.html';
                </script>";
         }
     } else {
         echo "<script>
             alert('email o password errate, riprovare');
-            window.location.href='Downloads/OneDrive_1_6-4-2022/BedAndBreakfast/BedAndBreakfast/html/login.html';
+            window.location.href='../html/login.html';
             </script>";
     }
     $conn->close();
