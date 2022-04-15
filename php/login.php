@@ -24,7 +24,7 @@ if (isset($_POST['submitLogin'])) {
             $_SESSION['user'] = $row["id_cliente"];
             echo "<script>
                 alert('accesso eseguito correttamente');
-                window.location.href='../html/index.html';
+                window.location.href='../html/index.php';
                </script>";
         }
     } else {

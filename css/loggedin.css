@@ -1,0 +1,26 @@
+body{
+    color: #8e9194;
+    background-color: #f4f6f9;
+}
+.avatar-xl img {
+    width: 110px;
+}
+.rounded-circle {
+    border-radius: 50% !important;
+}
+img {
+    vertical-align: middle;
+    border-style: none;
+}
+.text-muted {
+    color: #aeb0b4 !important;
+}
+.text-muted {
+    font-weight: 300;
+}
+.card{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

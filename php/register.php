@@ -24,7 +24,7 @@ VALUES ('$first_name','$last_name','$emailRegister','$password_cliente','$phone'
     if ($conn->query($sql) === TRUE) {
         echo "<script>
                 alert('registrazione effettuata correttamente');
-                window.location.href='../html/index.html';
+                window.location.href='IdeaProjects/BedAndBreakfast/html/index.php';
                </script>";
     } else {
         echo "<script>

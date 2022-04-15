@@ -8,13 +8,14 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link href="../css/style.css" rel="stylesheet"/>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <link href="../css/bootstrap.css" rel="stylesheet"/>
     <title>bed and breakfast</title>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg myNavbar bg-dark">
     <div class="container-fluid">
-        <a class="navbar-brand personal-link" href="index.html">BED&BREAKFAST</a>
+        <a class="navbar-brand personal-link" href="index.php">BED&BREAKFAST</a>
         <button class="custom-toggler navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarScroll"
                 aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
@@ -38,7 +39,20 @@
                     <a class="nav-link personal-link" href="#contact">contattaci</a>
                 </li>
             </ul>
-            <a class="btn btn-outline-success" href="login.html">Login</a>
+            <?php
+            session_start();
+            echo "<script>console.log(': " . $_SESSION['user'] . "' );</script>";
+
+            if (isset($_SESSION['user'])) {
+                ?>
+                <a class="btn btn-outline-success" href="loggedin.php"><i class="far fa-user-circle"></i></a>
+                <?php
+            } else {
+                ?>
+                <a class="btn btn-outline-success" href="login.html">Login</a>
+                <?php
+            } ?>
+
         </div>
     </div>
 </nav>
@@ -98,24 +112,28 @@
     <div class="slideshow-inner">
         <div class="mySlides fade">
 
-            <img  src='https://www.agriturismi.it/img/strutture/1241/est_esterno_20110817154259d.jpg' alt="sally lightfoot crab"/>
+            <img src='https://www.agriturismi.it/img/strutture/1241/est_esterno_20110817154259d.jpg'
+                 alt="sally lightfoot crab"/>
             <div class="text">Sally Lightfoot Crab</div>
         </div>
 
         <div class="mySlides fade">
-            <img  src='https://www.bbitalia.it/IMAGES/foto/small/26301-2019-03-26-18-37-22-105.jpg' style='width: 100%;' alt="fighting nazca boobies"/>
+            <img src='https://www.bbitalia.it/IMAGES/foto/small/26301-2019-03-26-18-37-22-105.jpg' style='width: 100%;'
+                 alt="fighting nazca boobies"/>
             <div class="text">A scuffle between two Nazca Boobies</div>
         </div>
 
         <div class="mySlides fade">
 
-            <img  src='https://dhqbz5vfue3y3.cloudfront.net/fotobbit/55323/4/z_20210621_07142370.jpg?rfh=1' style='width: 100%;' alt="otovalo waterfall"/>
+            <img src='https://dhqbz5vfue3y3.cloudfront.net/fotobbit/55323/4/z_20210621_07142370.jpg?rfh=1'
+                 style='width: 100%;' alt="otovalo waterfall"/>
             <div class="text">A waterfall discovered on a hike in Otovalo</div>
         </div>
 
         <div class="mySlides fade">
 
-            <img  src='https://dhqbz5vfue3y3.cloudfront.net/fotobbit/55323/4/z_20210621_07142370.jpg?rfh=1' style='width: 100%;' alt="pelican"/>
+            <img src='https://dhqbz5vfue3y3.cloudfront.net/fotobbit/55323/4/z_20210621_07142370.jpg?rfh=1'
+                 style='width: 100%;' alt="pelican"/>
             <div class="text">Pelican</div>
         </div>
 
@@ -199,31 +217,7 @@ Send Us A Message
             </div>
         </form>
 
-        <div class="content">
 
-            <div class="container text-left">
-                <div class="row justify-content-center">
-                    <div class="col-lg-10">
-                        <h2 class="mb-5 text-center">Calendar #5 (Calendar Range)</h2>
-                        <form action="#" class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="input_from">From</label>
-                                    <input type="text" class="form-control" id="input_from" placeholder="Start Date">
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="input_from">To</label>
-                                    <input type="text" class="form-control" id="input_to" placeholder="Start Date">
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-
-            </div>
-        </div>
         <div class="contact100-more flex-col-c-m" style="background-image: url('/img/1-26.jpg');">
             <div class="flex-w size1 p-b-47">
                 <div class="txt1 p-r-25">
@@ -267,6 +261,7 @@ contact@example.com
         </div>
     </div>
 </div>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous">
