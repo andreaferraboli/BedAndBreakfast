@@ -5,6 +5,7 @@
 
     <link rel="stylesheet" href="../css/prenota.css">
     <link href="../css/style.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://unpkg.com/@tabler/core@1.0.0-beta9/dist/js/tabler.min.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/@tabler/core@1.0.0-beta9/dist/css/tabler-flags.min.css">
     <link rel="stylesheet" href="https://unpkg.com/@tabler/core@1.0.0-beta9/dist/css/tabler-payments.min.css">
@@ -84,15 +85,34 @@ if ($conn->connect_error) {
             echo '<form name="buyform" method="post" action="aggiungiPrenotazione.php">';
             echo '<h1 class="cardH1">' . $row["nome_camera"] . "</h1>";
             echo '<img src="/img/' . $row["nome_camera"] . '.jpg" alt="' . $row["nome_camera"] . '" style="width:50%;height:300px">';
-            echo '<p class="price" >' . $row["prezzo_giornaliero"] . " €</p>";
+            echo '<p class="price" >Prezzo giornaliero:' . $row["prezzo_giornaliero"] . " €</p>";
             echo '<p class="information" >numero bagni:' . $row["n_bagni"] . "</p>";
             echo '<p class="information" >numero posti letto:' . $row["posti_letto"] . "</p>";
-            echo '<p class="information" >metratura:' . $row["metratura"] . "</p>";
+            echo '<p class="information" >metratura:' . $row["metratura"] . " m<sup>2</sup></p>";
+            echo '<div>';
+            if($row["wi_fi"]>=1)
+                echo '<i class="fa fa-wifi" style="font-size:48px;color:green"></i>';
+            else
+                echo '<i class="fa fa-wifi" style="font-size:48px;color:red"></i>';
+            if($row["parcheggio_privato"]>=1)
+                echo '<i class="fa fa-parking" style="font-size:48px;color:green"></i>';
+            else
+                echo '<i class="fa fa-parking" style="font-size:48px;color:red"></i>';
+            if($row["n_bagni"]>=1)
+                echo '<i class="fa fa-bath" style="font-size:48px;color:green"></i>';
+            else
+                echo '<i class="fa fa-bath" style="font-size:48px;color:red"></i>';
+            if($row["tv"]>=1)
+                echo '<i class="fa fa-tv" style="font-size:48px;color:green"></i>';
+            else
+                echo '<i class="fa fa-tv" style="font-size:48px;color:red"></i>';
+            echo'</div>';
             echo '<input type="hidden" name="id_camera" value="' . $row["id_camera"] . '"/' . ">";
-//            TODO:ADD CSS STYLE TO DATAPICKER
+            echo '<label>Data inizio:</label>';
             echo '<input type="date" id="start" name="trip-start" >';
+            echo '<label>Data fine:</label>';
             echo '<input type="date" id="end" name="trip-end" >';
-            echo '<br><button type="submit" value="Compra Macchina" class="cardButton" name="submit2" >Compra!</button>';
+            echo '<br><button type="submit" value="Compra Macchina" class="cardButton" name="submit2" >PRENOTA</button>';
             //            echo '<button class="cardButton" />Compra Macchina</button>';
             echo "</form>";
 

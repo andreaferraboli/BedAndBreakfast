@@ -108,52 +108,7 @@
         </div>
     </div>
 </div>
-<div class="slideshow-container">
-    <div class="slideshow-inner">
-        <div class="mySlides fade">
 
-            <img src='https://www.agriturismi.it/img/strutture/1241/est_esterno_20110817154259d.jpg'
-                 alt="sally lightfoot crab"/>
-            <div class="text">Sally Lightfoot Crab</div>
-        </div>
-
-        <div class="mySlides fade">
-            <img src='https://www.bbitalia.it/IMAGES/foto/small/26301-2019-03-26-18-37-22-105.jpg' style='width: 100%;'
-                 alt="fighting nazca boobies"/>
-            <div class="text">A scuffle between two Nazca Boobies</div>
-        </div>
-
-        <div class="mySlides fade">
-
-            <img src='https://dhqbz5vfue3y3.cloudfront.net/fotobbit/55323/4/z_20210621_07142370.jpg?rfh=1'
-                 style='width: 100%;' alt="otovalo waterfall"/>
-            <div class="text">A waterfall discovered on a hike in Otovalo</div>
-        </div>
-
-        <div class="mySlides fade">
-
-            <img src='https://dhqbz5vfue3y3.cloudfront.net/fotobbit/55323/4/z_20210621_07142370.jpg?rfh=1'
-                 style='width: 100%;' alt="pelican"/>
-            <div class="text">Pelican</div>
-        </div>
-
-    </div>
-
-
-    <a class="prev" onclick='plusSlides(-1)'>&#10094;</a>
-    <a class="next" onclick='plusSlides(1)'>&#10095;</a>
-</div>
-<br/>
-
-
-<div style='text-align: center;'>
-    <span class="dot" onclick='currentSlide(1)'></span>
-    <span class="dot" onclick='currentSlide(2)'></span>
-    <span class="dot" onclick='currentSlide(3)'></span>
-    <span class="dot" onclick='currentSlide(4)'></span>
-</div>
-
-</div>
 <div class="container my-5" id="position">
     <div class="row">
         <div class="col-lg-6 center">
@@ -219,46 +174,7 @@ Send Us A Message
 
 
         <div class="contact100-more flex-col-c-m" style="background-image: url('/img/1-26.jpg');">
-            <div class="flex-w size1 p-b-47">
-                <div class="txt1 p-r-25">
-                    <span class="lnr lnr-map-marker"></span>
-                </div>
-                <div class="flex-col size2">
-<span class="txt1 p-b-20">
-Address
-</span>
-                    <span class="txt2">
-Mada Center 8th floor, 379 Hudson St, New York, NY 10018 US
-</span>
-                </div>
-            </div>
-            <div class="dis-flex size1 p-b-47">
-                <div class="txt1 p-r-25">
-                    <span class="lnr lnr-phone-handset"></span>
-                </div>
-                <div class="flex-col size2">
-<span class="txt1 p-b-20">
-Lets Talk
-</span>
-                    <span class="txt3">
-+1 800 1236879
-</span>
-                </div>
-            </div>
-            <div class="dis-flex size1 p-b-47">
-                <div class="txt1 p-r-25">
-                    <span class="lnr lnr-envelope"></span>
-                </div>
-                <div class="flex-col size2">
-<span class="txt1 p-b-20">
-General Support
-</span>
-                    <span class="txt3">
-contact@example.com
-</span>
-                </div>
-            </div>
-        </div>
+
     </div>
 </div>
 
