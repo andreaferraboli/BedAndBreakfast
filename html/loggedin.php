@@ -37,9 +37,6 @@ if (isset($_SESSION['user'])) {
                     <a class="nav-link personal-link" href="prenota.php">le nostre camere</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link personal-link" href="prenota.php">galleria</a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link personal-link" href="index.php#contact">contattaci</a>
                 </li>
             </ul>
@@ -142,7 +139,7 @@ if (isset($_SESSION['user'])) {
                         echo '<p class="information" >metratura:' . $row2["metratura"] . "</p>";
                         echo "</div>";
                         echo '<div class="col-sm-4 card">';
-                        echo '<form action="IdeaProjects/BedAndBreakfast/php/updatePrenotazione.php" method="POST"> ';
+                        echo '<form action="../php/updatePrenotazione.php" method="POST"> ';
                         $differenza = floor((strtotime($row["data_fine_prenotazione"]) - strtotime($row["data_inizio_prenotazione"])) / 86400);
                         echo '<p class="cardInformation" >Dettagli prenotazione</p>';
                         echo '<input type="hidden" class="cardInformation" name="id_prenotazione" value="'.$row["id_prenotazione"] . '">';
@@ -155,7 +152,7 @@ if (isset($_SESSION['user'])) {
                         echo '<button  type="submit" class="btn-modify" data-toggle="tooltip" data-placement="top" title="elimina" name="submit3">modifica</button>';
                         //            echo '<button class="cardButton" />Compra Macchina</button>';
                         echo "</form>";
-                        echo '<form action="IdeaProjects/BedAndBreakfast/php/eliminaPrenotazione.php" method="POST"> ';
+                        echo '<form action="../php/eliminaPrenotazione.php" method="POST"> ';
                         echo '<input type="hidden" class="cardInformation" name="id_prenotazione" value="'.$row["id_prenotazione"] . '">';
                         echo '<button  type="submit" class="btn-delete" data-toggle="tooltip" data-placement="top" title="elimina" name="submit4">Elimina</button>';
                         echo "</form>";

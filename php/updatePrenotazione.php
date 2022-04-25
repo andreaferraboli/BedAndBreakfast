@@ -22,16 +22,16 @@ if (isset($_SESSION['user'])) {
             die("Connection failed: " . $conn->connect_error);
         }
         $sql1 = sprintf("UPDATE prenotare set data_inizio_prenotazione='%s', data_fine_prenotazione='%s'  WHERE id_prenotazione='%s' ",$data_inizio,$data_fine,$id_prenotazione);
-        echo $sql1;
+        
         if ($conn->query($sql1) === TRUE) {
             echo "<script>
                     alert('Update eseguito con successo');
-                    window.location.href='loggedin.php';
+                    window.location.href='../html/loggedin.php';
                    </script>";
         } else {
             echo "<script>
                     alert('errore durante update');
-                    window.location.href='loggedin.php';
+                    window.location.href='../html/loggedin.php';
                    </script>";
         }
 

@@ -23,16 +23,16 @@ if (isset($_SESSION['admin'])) {
             die("Connection failed: " . $conn->connect_error);
         }
         $sql1 = sprintf("UPDATE camere set nome_camera='%s', prezzo_giornaliero='%s', metratura='%s', n_bagni='%s', posti_letto='%s'  WHERE id_camera='%s' ",$nome_camera,$prezzo_giornaliero,$metratura,$n_bagni,$posti_letto,$id_camera);
-        echo $sql1;
+        
         if ($conn->query($sql1) === TRUE) {
             echo "<script>
                     alert('Update eseguito con successo');
-                    window.location.href='admin.php';
+                    window.location.href='../html/admin.php';
                    </script>";
         } else {
             echo "<script>
                     alert('errore durante update');
-                    window.location.href='admin.php';
+                    window.location.href='../html/admin.php';
                    </script>";
         }
 
@@ -41,7 +41,7 @@ if (isset($_SESSION['admin'])) {
     // not logged in
     echo "<script>
                     alert('non puoi prenotare fino a quando non sei loggato');
-                    window.location.href='loginAdmin.html';
+                    window.location.href='../html/loginAdmin.html';
                    </script>";
 }
 

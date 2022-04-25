@@ -79,7 +79,7 @@ if ($conn->connect_error) {
                 echo '<div class="row">';
             echo '<div class="column">';
             echo '<div class="card">';
-            echo '<form name="buyform" method="post" action="IdeaProjects/BedAndBreakfast/php/updateCamera.php">';
+            echo '<form name="buyform" method="post" action="../php/updateCamera.php">';
             echo '<input class="cardH1" name="nome_camera" value="'.$row["nome_camera"].'">' ;
             echo '<br><img src="/img/' . $row["nome_camera"] . '.jpg" alt="' . $row["nome_camera"] . '" style="width:50%;height:300px">';
             echo '<p class="price" >Prezzo giornaliero: €</p>';
@@ -94,7 +94,7 @@ if ($conn->connect_error) {
             echo '<br><button type="submit" value="Compra Macchina" class="btn-modify" name="submit_update" >MODIFICA</button>';
             //            echo '<button class="cardButton" />Compra Macchina</button>';
             echo "</form>";
-            echo '<form name="buyform" method="post" action="IdeaProjects/BedAndBreakfast/php/eliminaCamera.php">';
+            echo '<form name="buyform" method="post" action="../php/eliminaCamera.php">';
             echo '<input type="hidden" name="id_camera" value="' . $row["id_camera"] . '"/' . ">";
             echo '<br><button type="submit" value="Compra Macchina" class="btn-delete" name="submit_delete" >ELIMINA</button>';
             echo '</form>';

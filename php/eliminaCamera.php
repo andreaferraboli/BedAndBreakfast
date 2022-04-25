@@ -18,16 +18,16 @@ if (isset($_SESSION['admin'])) {
             die("Connection failed: " . $conn->connect_error);
         }
         $sql1 = sprintf("DELETE FROM camere WHERE id_camera='%s' ",$id_camera);
-        echo $sql1;
+        
         if ($conn->query($sql1) === TRUE) {
             echo "<script>
                     alert('eliminazione eseguito con successo');
-                    window.location.href='admin.php';
+                    window.location.href='../html/admin.php';
                    </script>";
         } else {
             echo "<script>
                     alert('errore durante eliminazione');
-                    window.location.href='admin.php';
+                    window.location.href='../html/admin.php';
                    </script>";
         }
 
@@ -36,7 +36,7 @@ if (isset($_SESSION['admin'])) {
     // not logged in
     echo "<script>
                     alert('non puoi prenotare fino a quando non sei loggato');
-                    window.location.href='loginAdmin.html';
+                    window.location.href='../html/loginAdmin.html';
                    </script>";
 }
 

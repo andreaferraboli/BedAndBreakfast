@@ -20,12 +20,12 @@ if (isset($_SESSION['user'])) {
             die("Connection failed: " . $conn->connect_error);
         }
         $sql1 = sprintf("SELECT * FROM `prenotare` WHERE id_camera='%s' and (DATE(data_inizio_prenotazione) BETWEEN '%s' and '%s' or DATE(data_fine_prenotazione) BETWEEN '%s' and '%s');", $id_camera, $data_inizio, $data_fine, $data_inizio, $data_fine);
-        echo $sql1;
+        
         $result1 = $conn->query($sql1);
         if ($result1-> num_rows > 0) {
             echo "<script>
                     alert('camera già prenotata');
-                    window.location.href='prenota.php';
+                    window.location.href='../html/prenota.php';
                    </script>";
         } else {
 
@@ -35,12 +35,12 @@ if (isset($_SESSION['user'])) {
             if ($conn->query($sql) === TRUE) {
                 echo "<script>
                     alert('prenotazione aggiunta correttamente');
-                    window.location.href='index.php';
+                    window.location.href='../html/index.php';
                    </script>";
             } else {
                 echo "<script>
                     alert('prenotazione non aggiunta correttamente'+'id_camera:'+'$id_camera'+' id_cliente:'+'$id_cliente');
-                    window.location.href='prenota.php';
+                    window.location.href='../html/prenota.php';
                    </script>";
             }
 
