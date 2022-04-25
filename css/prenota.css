@@ -32,7 +32,29 @@ body {
 
 
 }
-
+.btn-delete {
+    background-color: red;
+    color:white;
+}
+.btn-modify {
+    background-color: #ff6200;
+    color:white;
+}
+.btn-delete,.btn-modify{
+    margin: 0 0 0 2%;
+    border-radius: 50px;
+    border: none !important;
+    padding: 1% 1%;
+    text-transform: uppercase;
+    font-size: 80%;
+    font-weight: 500;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+.btn-delete:hover,.btn-modify:hover{
+    color:white;
+    border: none !important;
+}
 textarea {
     text-align: center;
 }

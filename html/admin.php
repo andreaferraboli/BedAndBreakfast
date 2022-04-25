@@ -57,7 +57,7 @@
         </div>
     </div>
 </nav>
-<h3 class="title">prenota la tua camera, per te un soggiorno indimenticabile!</h3>
+<h3 class="title">ADMIN</h3>
 <?php
 
 $conn = new mysqli('localhost', 'root', '', 'bed_and_breakfast');
@@ -79,40 +79,25 @@ if ($conn->connect_error) {
                 echo '<div class="row">';
             echo '<div class="column">';
             echo '<div class="card">';
-            echo '<form name="buyform" method="post" action="IdeaProjects/BedAndBreakfast/php/aggiungiPrenotazione.php">';
-            echo '<h1 class="cardH1">' . $row["nome_camera"] . "</h1>";
-            echo '<img src="/img/' . $row["nome_camera"] . '.jpg" alt="' . $row["nome_camera"] . '" style="width:50%;height:300px">';
-            echo '<p class="price" >Prezzo giornaliero:' . $row["prezzo_giornaliero"] . " €</p>";
-            echo '<p class="information" >numero bagni:' . $row["n_bagni"] . "</p>";
-            echo '<p class="information" >numero posti letto:' . $row["posti_letto"] . "</p>";
-            echo '<p class="information" >metratura:' . $row["metratura"] . " m<sup>2</sup></p>";
-            echo '<div>';
-            if($row["wi_fi"]>=1)
-                echo '<i class="fa fa-wifi" style="font-size:48px;color:green"></i>';
-            else
-                echo '<i class="fa fa-wifi" style="font-size:48px;color:red"></i>';
-            if($row["parcheggio_privato"]>=1)
-                echo '<i class="fa fa-parking" style="font-size:48px;color:green"></i>';
-            else
-                echo '<i class="fa fa-parking" style="font-size:48px;color:red"></i>';
-            if($row["n_bagni"]>=1)
-                echo '<i class="fa fa-bath" style="font-size:48px;color:green"></i>';
-            else
-                echo '<i class="fa fa-bath" style="font-size:48px;color:red"></i>';
-            if($row["tv"]>=1)
-                echo '<i class="fa fa-tv" style="font-size:48px;color:green"></i>';
-            else
-                echo '<i class="fa fa-tv" style="font-size:48px;color:red"></i>';
-            echo'</div>';
+            echo '<form name="buyform" method="post" action="IdeaProjects/BedAndBreakfast/php/updateCamera.php">';
+            echo '<input class="cardH1" name="nome_camera" value="'.$row["nome_camera"].'">' ;
+            echo '<br><img src="/img/' . $row["nome_camera"] . '.jpg" alt="' . $row["nome_camera"] . '" style="width:50%;height:300px">';
+            echo '<p class="price" >Prezzo giornaliero: €</p>';
+            echo '<input class="price" name="prezzo_giornaliero" value="'.$row["prezzo_giornaliero"].'">';
+            echo '<p class="information" >numero bagni:</p>';
+            echo '<input class="information" name="n_bagni" value="'.$row["n_bagni"].'">';
+            echo '<p class="information" >numero posti letto:</p>';
+            echo '<input class="information" name="posti_letto" value="'.$row["posti_letto"].'">';
+            echo '<p class="information" >metratura:</p>';
+            echo '<input class="information" name="metratura" value="'.$row["metratura"].'">';
             echo '<input type="hidden" name="id_camera" value="' . $row["id_camera"] . '"/' . ">";
-            echo '<label>Data inizio:</label>';
-            echo '<input type="date" id="start" name="trip-start" >';
-            echo '<label>Data fine:</label>';
-            echo '<input type="date" id="end" name="trip-end" >';
-            echo '<br><button type="submit" value="Compra Macchina" class="cardButton" name="submit2" >PRENOTA</button>';
+            echo '<br><button type="submit" value="Compra Macchina" class="btn-modify" name="submit_update" >MODIFICA</button>';
             //            echo '<button class="cardButton" />Compra Macchina</button>';
             echo "</form>";
-
+            echo '<form name="buyform" method="post" action="IdeaProjects/BedAndBreakfast/php/eliminaCamera.php">';
+            echo '<input type="hidden" name="id_camera" value="' . $row["id_camera"] . '"/' . ">";
+            echo '<br><button type="submit" value="Compra Macchina" class="btn-delete" name="submit_delete" >ELIMINA</button>';
+            echo '</form>';
             echo "</div>";
 
 

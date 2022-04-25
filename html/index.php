@@ -33,9 +33,6 @@
                     <a class="nav-link personal-link" href="prenota.php">le nostre camere</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link personal-link" href="prenota.php">galleria</a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link personal-link" href="#contact">contattaci</a>
                 </li>
             </ul>
@@ -52,7 +49,7 @@
                 <a class="btn btn-outline-success" href="login.html">Login</a>
                 <?php
             } ?>
-
+            <a class="btn btn-outline-success" href="loginAdmin.html">Admin</a>
         </div>
     </div>
 </nav>

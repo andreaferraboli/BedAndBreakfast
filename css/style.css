@@ -25,11 +25,14 @@
     border: 1px solid transparent;
     transition: box-shadow .15s ease-in-out;
 }
+.navbar .navbar-nav .nav-link {
+    color: rgb(253, 253, 253) !important;
+}
 .personal-link {
-    color: #fff;
+    color: #fff !important;
 }
 .personal-link:hover {
-    color: rgba(19, 108, 66, 1);
+    color: rgba(19, 108, 66, 1) !important;
 }
 .custom-toggler .navbar-toggler-icon {
     background-image: url(

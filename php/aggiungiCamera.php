@@ -40,7 +40,7 @@ if (isset($_SESSION['user'])) {
             } else {
                 echo "<script>
                     alert('prenotazione non aggiunta correttamente'+'id_camera:'+'$id_camera'+' id_cliente:'+'$id_cliente');
-//                    window.location.href='prenota.php';
+                    window.location.href='prenota.php';
                    </script>";
             }
 
