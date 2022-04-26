@@ -176,8 +176,12 @@ if (isset($_SESSION['user'])) {
                             window.location.href='../html/index.php';
                            </script>";
     }
+    echo '<form action="logout.php" method="POST"> ';
+    echo '<button  type="submit" class="btn-delete" data-toggle="tooltip" data-placement="top" title="elimina" name="submit_logout">logout</button>';
 
     ?>
+
+
 </div>
 </body>
 </html>
